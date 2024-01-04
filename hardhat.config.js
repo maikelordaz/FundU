@@ -57,7 +57,7 @@ module.exports = {
                 //chainId: 137,
                 accounts: [DEPLOYER_PK],
                 url: POLYGON_MAINNET_RPC_URL,
-                blockNumber: 157570648,
+                blockNumber: 51911848,
                 enabled: FORK === "true",
             },
         },
