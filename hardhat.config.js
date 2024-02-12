@@ -6,6 +6,7 @@ require("@nomicfoundation/hardhat-verify")
 require("solidity-coverage")
 require("hardhat-gas-reporter")
 require("hardhat-contract-sizer")
+require("@nomicfoundation/hardhat-chai-matchers")
 
 /******************************************** Private Keys *********************************************/
 const DEPLOYER_PK = process.env.DEPLOYER_PK
