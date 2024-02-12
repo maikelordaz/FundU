@@ -16,7 +16,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         : VERIFICATION_BLOCK_CONFIRMATIONS
 
     if (isDevnet || isTestnet) {
-        log("03. Deploying mock USDT...")
+        log("02. Deploying mock USDT...")
 
         const args = []
         const tUSDT = await deploy("tUSDT", {
@@ -25,13 +25,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
             log: true,
             waitConfirmations: waitBlockConfirmations,
         })
-        log("03. Mock USDT deployed")
+        log("02. Mock USDT deployed")
 
         if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
-            log("03. Verifying mock USDT")
+            log("02. Verifying mock USDT")
             await verify(tUSDT.address, args)
-            log("03. Mock USDT verified")
+            log("02. Mock USDT verified")
         }
+        log("=====================================================================================")
     }
 }
 
