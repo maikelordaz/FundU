@@ -45,28 +45,16 @@ contract FeeManager is ReentrancyGuard {
 
     /**
      * @param _protocolManager the address of the Protocol Manager
-     * @param _feeManager the address of the Fee Manager
      * @param _fee the transaction fee
      * @param _USDC USDC token address
      * @param _USDT USDT token address
      */
-    constructor(
-        uint8 _fee,
-        address _protocolManager,
-        address _feeManager,
-        address _USDC,
-        address _USDT
-    ) {
-        require(
-            _protocolManager != address(0x00) &&
-                _feeManager != address(0x00) &&
-                _feeManager != address(this),
-            "FeeManager: Invalid mannagers address"
-        );
+    constructor(uint8 _fee, address _protocolManager, address _USDC, address _USDT) {
+        require(_protocolManager != address(0x00), "FeeManager: Invalid mannagers address");
         require(_fee != 0, "FeeManager: Invalid fee");
 
         s_protocolManager = _protocolManager;
-        s_feeManager = _feeManager;
+        s_feeManager = _protocolManager;
         s_transactionFee = _fee;
 
         i_USDC = _USDC;
