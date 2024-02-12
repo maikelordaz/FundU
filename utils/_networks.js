@@ -15,7 +15,6 @@ const networkConfig = {
     31337: {
         name: "hardhat",
         protocolManager: "0x3904F59DF9199e0d6dC3800af9f6794c9D037eb1",
-        feeManagerAddress: "0x3904F59DF9199e0d6dC3800af9f6794c9D037eb1",
         fee: 2, //TODO: set correct value
     },
     137: {
@@ -23,13 +22,11 @@ const networkConfig = {
         usdc: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
         usdt: "0x170A18B9190669Cda08965562745A323C907E5Ec",
         protocolManager: "0x3904F59DF9199e0d6dC3800af9f6794c9D037eb1", //TODO: change when deployed
-        feeManagerAddress: "0x3904F59DF9199e0d6dC3800af9f6794c9D037eb1", //TODO: change when deployed
         fee: 2, //TODO: set correct value
     },
     80001: {
         name: "testnet_mumbai",
         protocolManager: "0x3904F59DF9199e0d6dC3800af9f6794c9D037eb1",
-        feeManagerAddress: "0x3904F59DF9199e0d6dC3800af9f6794c9D037eb1",
         fee: 2, //TODO: set correct value
     },
 }
