@@ -4,7 +4,7 @@ const { developmentChains } = require("../../utils/_networks")
 
 !developmentChains.includes(network.name)
     ? describe.skip
-    : describe.only("Fund-U deploy", function () {
+    : describe("Fund-U deploy", function () {
           let fundU, usdc, usdt
 
           beforeEach(async () => {
