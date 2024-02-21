@@ -13,7 +13,6 @@ const { usdtUnits } = require("../../utils/units")
               accounts = await ethers.getSigners()
               deployer = accounts[0]
               Alice = accounts[1]
-              Bob = accounts[2]
               Charlie = accounts[3]
               Eva = accounts[4]
               // Deploy contracts
@@ -29,7 +28,6 @@ const { usdtUnits } = require("../../utils/units")
               usdcCharlie = USDC.connect(Charlie)
               usdtCharlie = USDT.connect(Charlie)
               feeManagerAlice = feeManager.connect(Alice)
-              feeManagerBob = feeManager.connect(Bob)
 
               // Deposit on wallet
               const deposit = usdtUnits("10000.0")
