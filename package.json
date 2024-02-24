@@ -34,6 +34,8 @@
     "coverage": "yarn hardhat coverage",
     "slither": "slither . --solc-remaps '@openzeppelin=node_modules/@openzeppelin' --exclude naming-convention,low-level-calls --buidler-ignore-compile",
     "deploy": "yarn hardhat deploy",
+    "mumbai": "yarn hardhat deploy --network testnet_mumbai",
+    "local": "yarn hardhat --network localhost",
     "format": "yarn prettier --write ."
   }
 }

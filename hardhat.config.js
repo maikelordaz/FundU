@@ -8,6 +8,10 @@ require("hardhat-gas-reporter")
 require("hardhat-contract-sizer")
 require("@nomicfoundation/hardhat-chai-matchers")
 
+const { debug } = require("./tasks/debug")
+const { mintTokens } = require("./tasks/mintTokens")
+const { stream } = require("./tasks/stream")
+
 /******************************************** Private Keys *********************************************/
 const DEPLOYER_PK = process.env.DEPLOYER_PK
 const POLYGON_MAINNET_DEPLOYER_PK = process.env.POLYGON_MAINNET_DEPLOYER_PK
@@ -31,6 +35,23 @@ const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
 const FORK = process.env.FORK
 const GAS_REPORT = process.env.GAS_REPORT
 const SIZE = process.env.SIZE
+
+/****************************************** Tasks ***********************************************************/
+
+/*** Contracts info related ***/
+
+// Run yarn local debug
+task("debug", "Print info about all contracts and their configs", async (taskArguments, hre) => {
+    return debug(taskArguments, hre, "all")
+})
+
+/*** Mock tokens related ***/
+// Run yarn local mintTokens
+task(
+    "mintTokens",
+    "Mints tokens to all accounts with USDC/USDT and approve the fundU contract to use it",
+    mintTokens,
+)
 
 /***************************************** Config ******************************************************/
 /** @type import('hardhat/config').HardhatUserConfig */
