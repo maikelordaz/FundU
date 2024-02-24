@@ -6,7 +6,7 @@ const { day, week, month, year, usdtUnits } = require("../../../../utils/units")
 
 !developmentChains.includes(network.name)
     ? describe.skip
-    : describe.only("Fund-U newStream function", function () {
+    : describe("Fund-U newStream function", function () {
           let fundU, fundUAlice, fundUBob, USDC, USDT, usdcAlice, usdtAlice
           const mintAmount = 1000
 
