@@ -6,6 +6,7 @@ require("@nomicfoundation/hardhat-verify")
 require("solidity-coverage")
 require("hardhat-gas-reporter")
 require("hardhat-contract-sizer")
+require("@nomicfoundation/hardhat-chai-matchers")
 
 /******************************************** Private Keys *********************************************/
 const DEPLOYER_PK = process.env.DEPLOYER_PK
@@ -57,7 +58,7 @@ module.exports = {
                 //chainId: 137,
                 accounts: [DEPLOYER_PK],
                 url: POLYGON_MAINNET_RPC_URL,
-                blockNumber: 51911848,
+                blockNumber: 53794139,
                 enabled: FORK === "true",
             },
         },
@@ -72,7 +73,7 @@ module.exports = {
             blockConfirmations: 6,
             timeout: 900000,
         },
-        testnet_arbitrum_goerli: {
+        testnet_mumbai: {
             chainId: 80001,
             accounts: [TESTNET_DEPLOYER_PK],
             url: POLYGON_TESTNET_MUMBAI_RPC_URL,
@@ -101,8 +102,7 @@ module.exports = {
         deployer: {
             mainnet_arbitrum: DEPLOYER,
 
-            testnet_arbitrum_goerli: TESTNET_DEPLOYER,
-            testnet_arbitrum_sepolia: TESTNET_DEPLOYER,
+            testnet_mumbai: TESTNET_DEPLOYER,
 
             default: 0,
             localhost: 0,
