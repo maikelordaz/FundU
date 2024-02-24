@@ -11,7 +11,7 @@ const { week, usdtUnits } = require("../../../../utils/units")
 
 !developmentChains.includes(network.name)
     ? describe.skip
-    : describe.only("Fund-U resumeStream function", function () {
+    : describe("Fund-U resumeStream function", function () {
           let fundU, fundUAlice, fundUBob, USDC, usdcAlice
 
           beforeEach(async () => {
