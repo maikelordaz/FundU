@@ -108,7 +108,7 @@ contract UserWallet is ReentrancyGuard, FundUtils {
 
     /*** FEE MANAGER RELATED ***/
 
-    function setNewFeeManagerAddress(address newManager) external onlyProtocolManager {
+    function setNewFeeManagerAddress(address newManager) external onlyProtocolManager nonReentrant{
         require(
             newManager != address(0x00) && newManager != s_feeManager && newManager != msg.sender,
             "Wallet: Invalid Manager address"
