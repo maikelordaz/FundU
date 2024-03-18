@@ -53,6 +53,47 @@ task(
     mintTokens,
 )
 
+/*** Streams related ***/
+// Run yarn local stream:new
+task("stream:new", "Create three new stream with USDT mock tokens", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "new")
+})
+
+// Run yarn local stream:withdraw
+task("stream:withdraw", "Withdraw from stream 2", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "withdraw")
+})
+
+// Run yarn local stream:pause
+task("stream:pause", "Pause streams 1 and 2", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "pause")
+})
+
+// Run yarn local stream:cancel
+task("stream:cancel", "Cancel stream 2", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "cancel")
+})
+
+// Run yarn local stream:resume
+task("stream:resume", "Resume streams, 1 with paid, 2 unpaid", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "resume")
+})
+
+// Run yarn local stream:withdraw:all
+task("stream:withdraw:all", "Withdraw from both streams", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "withdrawAll")
+})
+
+// Run yarn local stream:complete
+task("stream:complete", "It complete the active streams", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "complete")
+})
+
+// Run yarn local stream
+task("stream", "It shows all stream functionalities", async (taskArguments, hre) => {
+    return stream(taskArguments, hre, "all")
+})
+
 /***************************************** Config ******************************************************/
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
